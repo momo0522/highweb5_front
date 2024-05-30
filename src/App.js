@@ -1,10 +1,10 @@
 import React from 'react';
 import {Routes, Route } from 'react-router-dom';
 import SelectPage from './pages/SelectPage';
-import CounselorPage from './pages/CounselorPage';
-import ClientPage from './pages/ClientPage';
-import ClientChatRoom from './pages/ClientChatRoom';
-import CounselorChatRoom from './pages/CounselorChatRoom';
+import CounselorPage from './pages/counselor/CounselorPage';
+import ClientPage from './pages/client/ClientPage';
+import ClientChatRoom from './pages/client/ClientChatRoom';
+import CounselorChatRoom from './pages/counselor/CounselorChatRoom';
 const App = () => {
   return (
     <Routes>

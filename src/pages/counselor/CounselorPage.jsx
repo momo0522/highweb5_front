@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import {useStatus} from '../../hooks/useStatus'
+import { useRoom } from '../../hooks/useRoom';
+import { useCounselor } from '../../hooks/useCounselor';
 
 const CounselorPage = () => {
-  const [totalClients, setTotalClients] = useState(0);
-  const [todayClients, setTodayClients] = useState(0);
-  const [sessionClients, setSessionClients] = useState(0);
+  const { isLoading } = useCounselor();
+  const { status } = useStatus(isLoading);
+  const { roomList } = useRoom(isLoading);
   const [selectedChat, setSelectedChat] = useState(null);
   const [chatHistory, setChatHistory] = useState([]);
 
   useEffect(() => {
     // 데이터 로드 예제
-    setTotalClients(100); // 예제 데이터
-    setTodayClients(5); // 예제 데이터
-    setSessionClients(3); // 예제 데이터
     setChatHistory([
       { id: 1, content: '첫 번째 상담 내용' },
       { id: 2, content: '두 번째 상담 내용' },
@@ -28,13 +27,13 @@ const CounselorPage = () => {
       <Link to="/counselorchatroom/1">채팅방 입장</Link> {/* 예제 ID */}
     </div>
       <div>
-        <p>전체 상담한 사람 수: {totalClients}</p>
-        <p>오늘 상담한 사람 수: {todayClients}</p>
-        <p>접속 이후 상담한 사람 수: {sessionClients}</p>
+        <p>전체 상담한 사람 수: {status.totalClientNum}</p>
+        <p>오늘 상담한 사람 수: {status.todayClientNum}</p>
+        <p>접속 이후 상담한 사람 수: {status.afterLoginClientNum}</p>
       </div>
       <div>
         <h2>이전 상담 기록</h2>
-        {chatHistory.map((chat) => (
+        {roomList.map((chat) => (
           <div key={chat.id} onClick={() => setSelectedChat(chat)}>
             상담 ID: {chat.id}
           </div>
