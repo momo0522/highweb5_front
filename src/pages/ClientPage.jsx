@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation} from 'react-router-dom';
-import customAxios from '../../lib/customAxios';
+import customAxios from '../lib/customAxios';
 
 const ClientPage = () => {
   const clientId = useLocation().state.clientId;

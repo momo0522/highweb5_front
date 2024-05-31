@@ -11,19 +11,7 @@ const CounselorPage = () => {
   const { isLoading, id } = useCounselor();
   const { status } = useStatus(isLoading);
   const { roomList } = useRoomList(isLoading);
-  const [selectedChat, setSelectedChat] = useState(null);
-  const [chatHistory, setChatHistory] = useState([]);
   const { roomId } = useRoom();
-
-  useEffect(() => {
-
-    // 데이터 로드 예제
-    setChatHistory([
-      { id: 1, content: '첫 번째 상담 내용' },
-      { id: 2, content: '두 번째 상담 내용' },
-      { id: 3, content: '세 번째 상담 내용' },
-    ]);
-  }, []);
 
   function handleEnterRoom(){
     navigate('/chat-room', {state:{roomId, id}});
@@ -51,12 +39,6 @@ const CounselorPage = () => {
           </div>
         ))}
       </div>
-      {selectedChat && (
-        <div>
-          <h2>선택된 상담</h2>
-          <p>{selectedChat.content}</p>
-        </div>
-      )}
     </div>
   );
 };
