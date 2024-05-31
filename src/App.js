@@ -5,6 +5,7 @@ import CounselorPage from './pages/counselor/CounselorPage';
 import ClientPage from './pages/client/ClientPage';
 import ChatRoom from './pages/counselorRoom/ChatRoom';
 import StompProvider from "./Provider/StompProvider";
+import PastCounselorRoom from "./pages/counselorRoom/PastCounselorRoom";
 const App = () => {
   return (
     <Routes>
@@ -16,6 +17,7 @@ const App = () => {
                 <ChatRoom/>
             </StompProvider>
         } />
+        <Route path="/past-room" element={<PastCounselorRoom/>} />
     </Routes>
   );
 };

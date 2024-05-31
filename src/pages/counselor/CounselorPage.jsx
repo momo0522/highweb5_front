@@ -29,6 +29,9 @@ const CounselorPage = () => {
     navigate('/chat-room', {state:{roomId, id}});
   }
 
+  function handleEnterPastRoom(id){
+    navigate('/past-room', {state:{id}});
+  }
   return (
     <div>
       <h1>상담사 페이지</h1>
@@ -42,9 +45,9 @@ const CounselorPage = () => {
       </div>
       <div>
         <h2>이전 상담 기록</h2>
-        {roomList.map((chat) => (
-          <div key={chat.id} onClick={() => setSelectedChat(chat)}>
-            상담 ID: {chat.id}
+        {roomList.map((room) => (
+          <div key={room.id} onClick={() => handleEnterPastRoom(room.id)}>
+            상담 ID: {room.id}
           </div>
         ))}
       </div>
