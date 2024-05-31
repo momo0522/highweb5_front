@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import customAxios from "../../../lib/customAxios";
 
 export function useRoom(){
-    const [roomId, setRoomId] = useState([]);
+    const [roomId, setRoomId] = useState(-1);
     const url = `/counselor-room`;
 
     useEffect(() => {

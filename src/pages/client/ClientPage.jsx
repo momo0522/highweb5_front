@@ -11,7 +11,8 @@ const ClientPage = () => {
       clientId: clientId
     });
     const roomId = response.data
-    navigate('/chat-room', {state: { roomId }})
+    const id = clientId
+    navigate('/chat-room', {state: { roomId, id }})
   };
 
   return (
