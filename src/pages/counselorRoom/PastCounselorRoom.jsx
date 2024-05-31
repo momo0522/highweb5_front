@@ -10,7 +10,7 @@ function PastCounselorRoom() {
 
     return (
         <div>
-            <div>{roomId}방</div>
+            <div>{roomId}번방</div>
             <div>
                 {messages.map((message) => (
                     <div key={message.id}>

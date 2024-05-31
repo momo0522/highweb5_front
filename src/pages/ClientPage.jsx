@@ -5,7 +5,7 @@ import customAxios from '../lib/customAxios';
 const ClientPage = () => {
   const clientId = useLocation().state.clientId;
   const navigate = useNavigate();
-  console.log(clientId)
+
   const handleRoomClick = async () => {
     const response = await customAxios.post('counselor-room', {
       clientId: clientId

@@ -5,7 +5,7 @@ const { REACT_APP_API_URL } = process.env;
 
 
 const customAxios = axios.create({
-  baseURL: "http://localhost:8080" + "/api",
+  baseURL: REACT_APP_API_URL + "/api",
 });
 
 customAxios.interceptors.response.use(

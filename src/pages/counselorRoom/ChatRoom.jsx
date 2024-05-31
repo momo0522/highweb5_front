@@ -24,7 +24,7 @@ function ChatRoom() {
 
     return (
         <div>
-            <div>{roomId}방</div>
+            <div>{roomId}번방</div>
             <input
                 type="text"
                 value={message}
