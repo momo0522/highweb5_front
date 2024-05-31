@@ -1,16 +1,16 @@
 import React from 'react';
-import { useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import {useStatus} from './hooks/useStatus'
 import { useRoomList } from './hooks/useRoomList';
-import { useCounselor } from './hooks/useCounselor';
 import {useRoom} from "./hooks/useRoom";
 
 const CounselorPage = () => {
   const navigate = useNavigate();
 
-  const { isLoading, id } = useCounselor();
-  const { status } = useStatus(isLoading);
-  const { roomList } = useRoomList(isLoading);
+  const id = useLocation().state.counselorId;
+
+  const { status } = useStatus();
+  const { roomList } = useRoomList();
   const { roomId } = useRoom();
 
   function handleEnterRoom(){
