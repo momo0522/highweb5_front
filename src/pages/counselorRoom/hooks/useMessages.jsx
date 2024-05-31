@@ -6,11 +6,15 @@ export function useMessages(id){
     const url = `/counselor-room/${id}`;
 
     useEffect(() => {
+        if(id === -1){
+            return;
+        }
         const fetchData = async () => {
             const response = await customAxios.get(url);
             const messageList = response.data
             setMessages(messageList);
         }
+
         fetchData()
     }, [id, url])
 
