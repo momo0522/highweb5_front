@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {MessageItem} from "./components/MessageItem";
 import {useMessages} from "./hooks/useMessages";
 import {usePublish} from "./hooks/usePublish";

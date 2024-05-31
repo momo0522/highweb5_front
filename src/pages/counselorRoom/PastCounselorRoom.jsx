@@ -2,7 +2,7 @@ import React from 'react';
 import {MessageItem} from "./components/MessageItem";
 import {useMessages} from "./hooks/useMessages";
 import { useLocation } from 'react-router-dom';
-import styles from "../counselor/CounselorChatRoom.module.css";
+
 function PastCounselorRoom() {
     const roomId = useLocation().state.id;
 
