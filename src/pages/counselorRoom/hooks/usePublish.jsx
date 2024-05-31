@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {useStomp} from "../context/StompContext";
+import {useStomp} from "../../../context/StompContext";
 
 export function usePublish(roomId, senderId) {
     const stompClient = useStomp();
@@ -9,7 +9,7 @@ export function usePublish(roomId, senderId) {
     function sendMessage() {
         if (stompClient) {
             stompClient.send(url, {},
-                JSON.stringify({roomId: roomId, senderId: 3, content: message}));
+                JSON.stringify({roomId: roomId, senderId: senderId, content: message}));
             setMessage('');
         }
     }

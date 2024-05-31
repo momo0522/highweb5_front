@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {useStatus} from '../../hooks/useStatus'
-import { useRoom } from '../../hooks/useRoom';
-import { useCounselor } from '../../hooks/useCounselor';
+import {useStatus} from './hooks/useStatus'
+import { useRoom, useRoomList } from './hooks/useRoomList';
+import { useCounselor } from './hooks/useCounselor';
 
 const CounselorPage = () => {
   const { isLoading } = useCounselor();
   const { status } = useStatus(isLoading);
-  const { roomList } = useRoom(isLoading);
+  const { roomList } = useRoomList(isLoading);
   const [selectedChat, setSelectedChat] = useState(null);
   const [chatHistory, setChatHistory] = useState([]);
 
@@ -24,7 +24,7 @@ const CounselorPage = () => {
     <div>
       <h1>상담사 페이지</h1>
       <div>
-      <Link to="/counselorchatroom/1">채팅방 입장</Link> {/* 예제 ID */}
+      <Link to="/chat-room">채팅방 입장</Link> {/* 예제 ID */}
     </div>
       <div>
         <p>전체 상담한 사람 수: {status.totalClientNum}</p>

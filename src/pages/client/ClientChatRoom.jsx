@@ -1,8 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-
+import { useLocation } from 'react-router-dom';
 const ClientChatRoom = () => {
-  const { id } = useParams();
+
+  const id = useLocation().state.id;
 
   return (
     <div>

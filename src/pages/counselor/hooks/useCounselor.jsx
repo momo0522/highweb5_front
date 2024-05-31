@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import customAxios from "../lib/customAxios";
+import customAxios from "../../../lib/customAxios";
 
 export function useCounselor(){
     const [isLoading, setIsLoading] = useState(true)

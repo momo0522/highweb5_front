@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import {useStomp} from "../context/StompContext";
+import {useStomp} from "../../../context/StompContext";
 
 export function useSubscribe(roomId, updateMessages) {
     const stompClient = useStomp();

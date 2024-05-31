@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import customAxios from "../lib/customAxios";
+import customAxios from "../../../lib/customAxios";
 
-export function useRoom(isLoading){
+export function useRoomList(isLoading){
     const [roomList, setRoomList] = useState([]);
     const url = `/counselor-room`;
 
