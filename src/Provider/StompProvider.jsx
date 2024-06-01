@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SockJS from 'sockjs-client';
 import Stomp from 'stompjs';
 import StompContext from "../context/StompContext";
-
+const { REACT_APP_API_URL } = process.env;
 const StompProvider = ({ children }) => {
     const [stompClient, setStompClient] = useState(null);
 
@@ -10,7 +10,7 @@ const StompProvider = ({ children }) => {
         let interval;
 
         const connect = () => {
-            const socket = new SockJS('http://localhost:8080/api/ws');
+            const socket = new SockJS(REACT_APP_API_URL + '/api/ws');
             const stompClient = Stomp.over(socket);
 
             stompClient.connect({}, () => {
